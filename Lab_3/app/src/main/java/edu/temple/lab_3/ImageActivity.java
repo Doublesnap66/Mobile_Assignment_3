@@ -21,6 +21,14 @@ public class ImageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TextView dog1 = new TextView(getApplicationContext());
+        TextView[] arraySpinner = new TextView[]{
+            dog1
+        };
 
+        Spinner s = findViewById(R.id.spinner);
+        ImageAdapter adapter = new ImageAdapter(this, arraySpinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s.setAdapter(adapter);
     }
 }
